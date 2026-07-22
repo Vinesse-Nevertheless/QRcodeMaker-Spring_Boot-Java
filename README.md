@@ -73,21 +73,23 @@ This service allows client applications to dynamically generate QR code images i
 
 | Request Details | Visual Output |
 |---|---|
-| **URL:** `http://localhost:8181/api/qrcode?contents=https://github.com`<br>**Status:** `200 OK`<br>**Content-Type:** `image/png`<br>**Dimensions:** 250x250px | ![GitHub QR Code Sample](https://raw.githubusercontent.com/your-username/qr-code-api/main/docs/sample-github.png) |
+| **URL:** `http://localhost:8181/api/qrcode?contents=https://github.com`<br>**Status:** `200 OK`<br>**Content-Type:** `image/png`<br>**Dimensions:** 250x250px | <img width="150" alt="200px QR Code" src="https://github.com/user-attachments/assets/079929c9-18ff-480a-81cb-c0a526721d6c" />
+
 
 #### 2. Customized Parameters
 `GET /api/qrcode?contents=Hello+World&size=300&correction=H&type=jpeg`
 
 | Request Details | Visual Output |
 |---|---|
-| **URL:** `http://localhost:8181/api/qrcode?contents=Hello+World&size=300&correction=H&type=jpeg`<br>**Status:** `200 OK`<br>**Content-Type:** `image/jpeg`<br>**Dimensions:** 300x300px | ![Hello World High Correction](https://raw.githubusercontent.com/your-username/qr-code-api/main/docs/sample-helloworld.png) |
+| **URL:** `http://localhost:8181/api/qrcode?contents=Hello+World&size=300&correction=H&type=jpeg`<br>**Status:** `200 OK`<br>**Content-Type:** `image/jpeg`<br>**Dimensions:** 300x300px | <img width="250" alt="300px QR Code" src="https://github.com/user-attachments/assets/43c726a8-2ef3-42c8-b446-255e33446af9" />
+
 
 ## Error Responses
 If any parameter fails validation, the service returns 400 Bad Request with a JSON payload explaining the error.
 
 ### Example: Invalid Correction Level
 ``` Bash
-curl -i "http://localhost:8181/api/qrcode?contents=Hello&correction=INVALID"
+'GET /api/qrcode?contents=Hello&correction=INVALID'
 ```
 
 ``` JSON
@@ -101,7 +103,7 @@ Content-Type: application/json
 
 ### Example: Invalid Size
 ``` Bash
-curl -i "http://localhost:8181/api/qrcode?contents=Hello&size=500"
+'GET /api/qrcode?contents=Hello&size=500'
 ```
 
 ``` JSON
